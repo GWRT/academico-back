@@ -10,7 +10,11 @@ class Curso extends Model
     use HasFactory;
 
     public $table = "cursos";
-    protected $fillable = array("*");
+    protected $fillable = [
+        'id',
+        'nombre',
+        'horas',
+    ];
 
     public function estudiantes() {
         return $this->belongsToMany(Estudiante::class, "curso_estudiante");
